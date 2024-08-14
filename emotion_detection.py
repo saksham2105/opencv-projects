@@ -7,7 +7,7 @@ import time
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 # Start capturing video
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 # Variable to keep track of the last time a request was sent
 last_request_time = 0

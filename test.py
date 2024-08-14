@@ -1,9 +1,11 @@
-from pynput import keyboard
+import cv2
+from ultralytics import YOLO
 
-# The event listener will be running in this block
-with keyboard.Events() as events:
-    for event in events:
-        if event.key == keyboard.Key.esc:
-            break
-        else:
-            print('Received event {}'.format(event))
+# Load YOLOv5 model
+model = YOLO('yolov5s.pt')
+
+# Load and resize image
+# Perform detection on image
+results = model.predict("traffic.jpeg")
+
+print(results)
